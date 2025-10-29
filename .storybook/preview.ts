@@ -1,16 +1,12 @@
-import type { Preview } from "@storybook/react";
-import "../src/index.css";
-import "material-icons/iconfont/material-icons.css";
+// .storybook/preview.js
+import "../src/index.css"; // Import your main CSS file
 
-const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
     },
   },
 };
-
-export default preview;
