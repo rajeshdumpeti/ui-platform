@@ -1,5 +1,5 @@
 {
-  "name": "ui-platform",
+  "name": "@rajeshdumpeti/ui-platform",
   "type": "module",
   "version": "1.0.0",
   "description": "Enterprise design system with React, TypeScript, and Tailwind CSS",
@@ -10,8 +10,11 @@
     "ui",
     "tailwindcss"
   ],
-  "author": "Your Name",
-  "license": "MIT",
+  "homepage": "https://rajeshdumpeti.github.io/ui-platform",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rajeshdumpeti/ui-platform"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run build:types",
