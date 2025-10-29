@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run build:types",
-    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist --declaration --declarationMap",
     "test": "vitest run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -30,11 +30,10 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/ui-platform.es.js",
-      "require": "./dist/ui-platform.umd.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./styles.css": "./dist/style.css"
+      "require": "./dist/ui-platform.umd.js"
+    }
   },
   "files": [
     "dist",
