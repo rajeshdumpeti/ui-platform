@@ -2,12 +2,43 @@
   "name": "ui-platform",
   "type": "module",
   "version": "1.0.0",
+  "description": "Enterprise design system with React, TypeScript, and Tailwind CSS",
+  "keywords": [
+    "react",
+    "design-system",
+    "components",
+    "ui",
+    "tailwindcss"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run build:types",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "test": "vitest run",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "npm run build"
+  },
+  "main": "./dist/ui-platform.umd.js",
+  "module": "./dist/ui-platform.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/ui-platform.es.js",
+      "require": "./dist/ui-platform.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/style.css"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -17,8 +48,6 @@
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.548.0",
     "material-icons": "^1.13.14",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
