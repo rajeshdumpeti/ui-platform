@@ -1,5 +1,5 @@
 {
-  "name": "@rajeshdumpeti/ui-platform",
+  "name": "@bharathis-canvas/ui-platform",
   "type": "module",
   "version": "1.0.0",
   "description": "Enterprise design system with React, TypeScript, and Tailwind CSS",
@@ -8,13 +8,16 @@
     "design-system",
     "components",
     "ui",
-    "tailwindcss"
+    "tailwindcss",
+    "typescript"
   ],
   "homepage": "https://rajeshdumpeti.github.io/ui-platform",
   "repository": {
     "type": "git",
     "url": "https://github.com/rajeshdumpeti/ui-platform"
   },
+  "license": "MIT",
+  "author": "Rajesh Dumgeti <dumpetirajesh123@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run build:types",
@@ -36,9 +39,11 @@
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
@@ -67,6 +72,8 @@
     "gh-pages": "^6.3.0",
     "jsdom": "^27.0.1",
     "postcss": "^8.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.6.3",
     "vite": "^6.0.1",

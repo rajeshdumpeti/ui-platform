@@ -1,0 +1,10 @@
+# .npmignore
+src/
+.storybook/
+.github/
+public/
+*.test.*
+*.stories.*
+.storybook-static/
+vite-index.html
+fix-build.js

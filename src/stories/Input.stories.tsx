@@ -320,7 +320,8 @@ export const RealWorldExamples: Story = {
             <Input
               type="tel"
               placeholder="+1 (555) 000-0000"
-              leftIcon={<Icon name="phone" size="sm" />}
+              size="md" // Use custom Size prop (overridden from HTML; defaults to "md")
+              leftIcon={<Icon name="smartphone" size="sm" />}
             />
           </div>
         </div>

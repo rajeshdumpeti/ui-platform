@@ -21,7 +21,7 @@ export { Button } from "./components/Button";
 export type { ButtonProps } from "./components/Button";
 
 export { Icon } from "./components/Icon";
-export type { IconProps, IconName } from "./components/Icon";
+export type { IconProps } from "./components/Icon"; // Remove IconName from here
 
 export { Input } from "./components/Input";
 export type { InputProps } from "./components/Input";
@@ -166,4 +166,4 @@ export const iconCategories = {
 
 export const getIconsByCategory = (
   category: keyof typeof iconCategories
-): IconName[] => iconCategories[category] as IconName[];
+): IconName[] => iconCategories[category] as unknown as IconName[];

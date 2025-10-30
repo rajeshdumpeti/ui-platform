@@ -1,13 +1,3 @@
-import { iconSet } from "./iconSet";
-
-export type IconName = keyof typeof iconSet;
-
-export interface IconCategory {
-  name: string;
-  icons: IconName[];
-  description?: string;
-}
-
 // Common size variants
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 

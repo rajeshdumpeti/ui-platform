@@ -53,11 +53,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <div
             className={cn(
               "absolute inset-y-0 left-0 flex items-center pointer-events-none text-gray-400",
-              size === "xs" && "pl-2",
-              size === "sm" && "pl-2.5",
-              size === "md" && "pl-3",
-              size === "lg" && "pl-3",
-              size === "xl" && "pl-3.5"
+              size === "xs" ? "pl-2" : false,
+              size === "sm" ? "pl-2.5" : false,
+              size === "md" ? "pl-3" : false,
+              size === "lg" ? "pl-3" : false,
+              size === "xl" ? "pl-3.5" : false
             )}
           >
             {leftIcon}
@@ -75,21 +75,17 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             sizeClasses[size],
             stateClasses[finalState],
 
-            // Icon padding
-            leftIcon && [
-              size === "xs" && "pl-8",
-              size === "sm" && "pl-9",
-              size === "md" && "pl-10",
-              size === "lg" && "pl-11",
-              size === "xl" && "pl-12",
-            ],
-            rightIcon && [
-              size === "xs" && "pr-8",
-              size === "sm" && "pr-9",
-              size === "md" && "pr-10",
-              size === "lg" && "pr-11",
-              size === "xl" && "pr-12",
-            ],
+            // Icon padding (use ternary to ensure string | false)
+            leftIcon && size === "xs" ? "pl-8" : false,
+            leftIcon && size === "sm" ? "pl-9" : false,
+            leftIcon && size === "md" ? "pl-10" : false,
+            leftIcon && size === "lg" ? "pl-11" : false,
+            leftIcon && size === "xl" ? "pl-12" : false,
+            rightIcon && size === "xs" ? "pr-8" : false,
+            rightIcon && size === "sm" ? "pr-9" : false,
+            rightIcon && size === "md" ? "pr-10" : false,
+            rightIcon && size === "lg" ? "pr-11" : false,
+            rightIcon && size === "xl" ? "pr-12" : false,
 
             fullWidth && "w-full",
             className
@@ -102,11 +98,11 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <div
             className={cn(
               "absolute inset-y-0 right-0 flex items-center pointer-events-none text-gray-400",
-              size === "xs" && "pr-2",
-              size === "sm" && "pr-2.5",
-              size === "md" && "pr-3",
-              size === "lg" && "pr-3",
-              size === "xl" && "pr-3.5"
+              size === "xs" ? "pr-2" : false,
+              size === "sm" ? "pr-2.5" : false,
+              size === "md" ? "pr-3" : false,
+              size === "lg" ? "pr-3" : false,
+              size === "xl" ? "pr-3.5" : false
             )}
           >
             {rightIcon}
