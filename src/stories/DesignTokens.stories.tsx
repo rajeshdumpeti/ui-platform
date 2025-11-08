@@ -185,10 +185,12 @@ export const Spacing: StoryObj = {
       <div className="space-y-6">
         {Object.entries(spacing).map(([scale, value]) => (
           <div key={scale} className="flex items-center gap-6">
-            <div className="w-20 text-body-medium font-medium">
+            <div className="w-[5.5rem] text-body-medium font-medium">
               spacing-{scale}
             </div>
-            <div className="w-20 text-caption text-neutral-600">{value}</div>
+            <div className="w-[5.5rem] text-caption text-neutral-600">
+              {value}
+            </div>
             <div
               className="h-8 bg-primary-500 rounded"
               style={{ width: value }}
