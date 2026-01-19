@@ -13,13 +13,12 @@ type CommonButtonProps = {
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
-  animated?: boolean;
 };
 
 // Motion branch (extends HTMLMotionProps with common)
 type MotionButtonProps = CommonButtonProps &
   Omit<HTMLMotionProps<"button">, "children" | "className" | "disabled"> & {
-    animated: true;
+    animated?: true;
   };
 
 // Static branch (extends ComponentPropsWithoutRef with common)
@@ -28,7 +27,7 @@ type StaticButtonProps = CommonButtonProps &
     ComponentPropsWithoutRef<"button">,
     "children" | "className" | "disabled"
   > & {
-    animated: false;
+    animated?: false;
   };
 
 export type ButtonProps = MotionButtonProps | StaticButtonProps;
@@ -80,7 +79,7 @@ export const Button = React.forwardRef<
       animated = true,
       ...props
     },
-    ref
+    ref,
   ) => {
     const baseClasses =
       "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus-ring disabled:opacity-50 disabled:pointer-events-none";
@@ -95,7 +94,7 @@ export const Button = React.forwardRef<
 
     const conditionalClasses = cn(
       (isLoading || disabled) && "cursor-not-allowed",
-      isLoading && "opacity-70"
+      isLoading && "opacity-70",
     );
 
     const spinnerClasses = cn(
@@ -104,19 +103,19 @@ export const Button = React.forwardRef<
       (size === "sm" || size === "md") && "h-4 w-4",
       size === "lg" && "h-5 w-5",
       size === "xl" && "h-6 w-6",
-      Boolean(children) && "mr-2"
+      Boolean(children) && "mr-2",
     );
 
     const leftIconClasses = cn(
       (["xs", "sm", "md"] as readonly string[]).includes(size as string) &&
         "mr-2",
-      (["lg", "xl"] as readonly string[]).includes(size as string) && "mr-3"
+      (["lg", "xl"] as readonly string[]).includes(size as string) && "mr-3",
     );
 
     const rightIconClasses = cn(
       (["xs", "sm", "md"] as readonly string[]).includes(size as string) &&
         "ml-2",
-      (["lg", "xl"] as readonly string[]).includes(size as string) && "ml-3"
+      (["lg", "xl"] as readonly string[]).includes(size as string) && "ml-3",
     );
 
     // Motion props only if animated
@@ -139,7 +138,7 @@ export const Button = React.forwardRef<
             currentVariantClasses,
             finalSizeClasses,
             conditionalClasses,
-            className
+            className,
           )}
           disabled={disabled || isLoading}
           {...motionProps}
@@ -190,7 +189,7 @@ export const Button = React.forwardRef<
           currentVariantClasses,
           finalSizeClasses,
           conditionalClasses,
-          className
+          className,
         )}
         disabled={disabled || isLoading}
         {...(props as Omit<
@@ -229,7 +228,7 @@ export const Button = React.forwardRef<
         )}
       </button>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";
