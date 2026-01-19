@@ -2,6 +2,7 @@ import React from "react";
 import { cn } from "../lib";
 import type { ColorVariant } from "../types";
 import { Icon } from "./Icon";
+import type { IconName } from "./Icon";
 
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -19,7 +20,7 @@ const variantClasses: Record<Exclude<ColorVariant, "default">, string> = {
   info: "border-info-200 bg-info-50 text-info-700",
 };
 
-const defaultIcon: Record<Exclude<ColorVariant, "default">, string> = {
+const defaultIcon: Record<Exclude<ColorVariant, "default">, IconName> = {
   primary: "info",
   secondary: "info",
   success: "check_circle",

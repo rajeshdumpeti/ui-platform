@@ -16,7 +16,8 @@ export const List = React.forwardRef<HTMLDivElement, ListProps>(
   )
 );
 
-export interface ListItemProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ListItemProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   leading?: React.ReactNode;
   title: React.ReactNode;
   subtitle?: React.ReactNode;

@@ -3,7 +3,8 @@ import { cn } from "../lib";
 
 export type ModalSize = "sm" | "md" | "lg" | "xl";
 
-export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ModalProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   open: boolean;
   onClose: () => void;
   title?: React.ReactNode;

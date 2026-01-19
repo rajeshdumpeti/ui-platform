@@ -1,7 +1,7 @@
 {
   "name": "@bharathis-canvas/ui-platform",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Enterprise design system with React, TypeScript, and Tailwind CSS",
   "keywords": [
     "react",

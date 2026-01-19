@@ -4,7 +4,8 @@ import { cn } from "../lib";
 export type DrawerSide = "left" | "right";
 export type DrawerSize = "sm" | "md" | "lg";
 
-export interface DrawerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DrawerProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
   open: boolean;
   onClose: () => void;
   title?: React.ReactNode;

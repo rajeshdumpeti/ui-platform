@@ -2,9 +2,9 @@ import React from "react";
 import { Button } from "./Button";
 import type { ButtonProps } from "./Button";
 
-export interface LoadingButtonProps extends ButtonProps {
+export type LoadingButtonProps = ButtonProps & {
   loadingText?: string;
-}
+};
 
 export const LoadingButton = React.forwardRef<
   HTMLButtonElement,
